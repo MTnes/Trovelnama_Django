@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from job_portal import views
+from django.urls import path
+from django.conf.urls import include,url
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index,name='index'),
-]
+    path('job_portal/', views.portal,name='portal'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
