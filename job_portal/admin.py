@@ -8,3 +8,7 @@ class Team_memberAdmin(admin.ModelAdmin):
 @admin.register(Blogs)
 class BlogAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Messages)
+class MessageAdmin(admin.ModelAdmin):
+    pass

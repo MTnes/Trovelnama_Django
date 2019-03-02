@@ -41,4 +41,19 @@ class Blogs(models.Model):
     def __self__(self):
         return self.name
 
+class Messages(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+    class Meta:
+        managed = True
+        db_table = 'messages'
+        verbose_name_plural = 'Messages'
+    def __self__(self):
+        return self.name
+
 
